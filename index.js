@@ -55,7 +55,7 @@ async function fetchEmojis({ domain, jar }) {
   process.stdout.write('\nFetch emoji ')
 
   const emojis = []
-  for (let page = 0; ; ++page) {
+  for (let page = 1; ; ++page) {
     process.stdout.write('.')
 
     const uri = `https://${domain}.slack.com/customize/emoji?page=${page}`
