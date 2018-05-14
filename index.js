@@ -94,6 +94,8 @@ async function registerEmojis({ emojis, jar, domain }) {
     await postRegisterForm({ formData: registerFormData, emoji, jar, domain })
     // break // for debug
   }
+
+  process.stdout.write(`\n`)
 }
 
 async function fetchRegisterFormData({ jar, domain }) {
@@ -152,10 +154,10 @@ async function postRegisterForm({ formData, emoji, jar, domain }) {
   const elem = $('.alert:first-of-type')
   if (elem.hasClass('alert_success')) {
     const msg = elem.find('strong').text().trim()
-    console.log(msg)
+    process.stdout.write(msg)
   } else {
     const msg = elem.text().trim()
-    console.log(msg)
+    process.stdout.write(msg)
   }
 }
 
